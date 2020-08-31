@@ -1,8 +1,25 @@
-![01-调用字符映射表输入特殊符号](E:\02_归零叔\01_必须打造核心竞争力\Python编程锦囊\Python_exercise\第1章_核心基础应用\01-调用字符映射表输入特殊符号.png)
+01-调用字符映射表输入特殊符号
 
-![02-利用字符编码输入特殊符号](E:\02_归零叔\01_必须打造核心竞争力\Python编程锦囊\Python_exercise\第1章_核心基础应用\02-利用字符编码输入特殊符号.png)
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/01.png)
 
-![03.实现日间、星期客流高峰提示](E:\02_归零叔\01_必须打造核心竞争力\Python编程锦囊\Python_exercise\第1章_核心基础应用\03.实现日间、星期客流高峰提示.png)
+02-利用字符编码输入特殊符号
 
-![03.电信营业厅周业务分析的实现2](E:\02_归零叔\01_必须打造核心竞争力\Python编程锦囊\Python_exercise\第1章_核心基础应用\03.电信营业厅周业务分析的实现2.png)
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/02.png)
 
+03.实现日间、星期客流高峰提示
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-2.png)
+
+03-2电信营业厅周业务分析的实现
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03.png)
+
+
+
+
+
+
+
+![Image text](https://raw.githubusercontent.com/hongmaju/light7Local/master/img/productShow/20170518152848.png)
+
+保存即可。
