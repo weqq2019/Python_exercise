@@ -14,4 +14,4 @@ for i in range(len(time)-1):
 
     print(time[i],":",time[i+1],end='')#输出时间段
     quant=math.ceil(int(person[i])/600) #以600为基数量化客流对比数据
-    print(('\033[1;33;0m'+chr(0xf04a)*quant).rjust(30)+'\033[0m')#rjust() 左边补齐
+    print(('\033[1;33m'+chr(0xf04a)*quant).rjust(30)+'\033[0m')#rjust() 左边补齐
