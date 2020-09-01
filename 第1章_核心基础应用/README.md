@@ -18,9 +18,13 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/04.png)
 
+05-动态循环输出数字
 
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/05.png)
 
+05-2动态循环输出文字
 
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/05-2.png)
 
 
 
