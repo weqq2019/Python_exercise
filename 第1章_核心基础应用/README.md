@@ -14,7 +14,9 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03.png)
 
+04-模拟界面菜单功能中的方向键
 
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/04.png)
 
 
 
