@@ -26,5 +26,9 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/05-2.png)
 
+ 06-如何实现多国语言文字输出
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/06.png)
+
 
 
