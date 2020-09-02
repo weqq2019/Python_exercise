@@ -30,5 +30,23 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/06.png)
 
+07-检索敏感词并描红输出
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/07.png)
+
+08-采用自定义规则对列表进行顺序
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/08.png)
+
+09-利用lambda表达式简化编程
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/09-1.png)
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/09-2.png)
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/09-3.png)
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/09-4.png)
+
 
 
