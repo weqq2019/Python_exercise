@@ -48,5 +48,7 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/09-4.png)
 
+10-清洗字符串和列表
 
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/10.png)
 
