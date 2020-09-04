@@ -52,3 +52,16 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/10.png)
 
+11-拼接字符串、列表和字典
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/11.png)
+
+12-如何实现字符串与列表等数据的去重
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/12.png)
+
+13-利用条形图显示分析数据
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/13.png)
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/13-2.png)
