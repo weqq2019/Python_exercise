@@ -1,8 +1,4 @@
-史上最难强迫症游戏2第二关
+01-中英文混排时对齐![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/2-01.png)
 
-![Image text](https://raw.githubusercontent.com/weqq2019/ANJL/master/img/game-02.gif)
 
-史上最难强迫症游戏2第三关
-
-![Image text](https://raw.githubusercontent.com/weqq2019/ANJL/master/img/game-03.gif)
 
