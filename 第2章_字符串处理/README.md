@@ -6,7 +6,7 @@
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/02-02.png)
 
-![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/02-02-02.png)
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/02-02-02x.png)
 
 03-验证用户输入的数据
 
