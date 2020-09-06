@@ -62,3 +62,4 @@ else:
             break
 if isgo =='go':                                             # 验证成功输出登录
     print('正在登录站长之家系统！')
+
