@@ -32,7 +32,7 @@
 
 08-如何使用MD5或SHA1等算法对用户密码进行加密
 
-![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/02-08.png)
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/02-08x.png)
 
 09-比较两种字符串的拼接方法哪个更省时
 
