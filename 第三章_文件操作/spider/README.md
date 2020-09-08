@@ -143,3 +143,50 @@
 ```
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-05-05x.png)
+
+
+
+## **完成scrapy Tencent项目完整流程**
+
+- **完整流程**
+
+  ```python
+  【1】scrapy startproject Tencent
+  【2】cd Tencent
+  【3】scrapy genspider tencent tencent.com
+  【4】items.py(定义爬取数据结构)
+      import scrapy
+      class TencentItem(scrapy.Item):
+          name = scrapy.Field()
+          address = scrapy.Field()
+      
+  【5】tencent.py（写爬虫文件）
+      import scrapy
+      from ..items import TencentItem
+      class TencentSpider(scrapy.Spider):
+          name = 'tencent'
+          allowed_domains = ['tencent.com']
+          start_urls = ['']
+          def parse(self, response):
+              item = TencentItem()
+              item['name'] = xxxx
+              yield item
+  
+  【6】pipelines.py(数据处理)
+      class TencentPipeline(object):
+          def process_item(self, item, spider):
+              return item
+      
+  【7】settings.py(全局配置)
+      LOG_LEVEL = ''  # DEBUG < INFO < WARNING < ERROR < CRITICAL
+      LOG_FILE = ''
+      FEED_EXPORT_ENCODING = ''
+      
+  【8】run.py 
+      from scrapy import cmdline
+      cmdline.execute('scrapy crawl tencent'.split())
+  ```
+
+
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-05-06.png)
