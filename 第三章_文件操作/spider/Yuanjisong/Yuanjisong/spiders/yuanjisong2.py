@@ -5,8 +5,10 @@
 # 文件名称 : yuanjisong2.py
 # 开发工具 : PyCharm
 """
-猿急送
+猿急送爬虫单子数据
 """
+import random
+
 import requests
 from lxml import etree
 import redis
@@ -21,8 +23,11 @@ import time
 class MzbSpider:
     def __init__(self):
         self.url = 'https://www.yuanjisong.com/job/allcity/page{}'
-        self.headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36'}
-        self.r = redis.Redis(host='127.0.0.1', port=6379, db=0)
+        self.headers = {
+            'Cookie':'HMACCOUNT_BFESS=0A354F2E1B912620; BDUSS_BFESS=TdERTNlUU1mU2wzdH5NSVdMc0t2SjVmY0FYN1BpaWVhdE54OE9HSjhLMzBWSHRmRUFBQUFBJCQAAAAAAAAAAAEAAACwBAwGMTUxNTgxNwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPTHU1~0x1Nfe'
+            ,'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+        # self.r = redis.Redis(host='127.0.0.1', port=6379, db=0)
+        self.item_list=[]
         #2个队列、2把锁
         self.one_q = Queue()
         self.two_q = Queue()
@@ -34,7 +39,7 @@ class MzbSpider:
     def get_html(self, url):
         """功能函数1 - 请求"""
         headers = {'User-Agent': UserAgent().random}
-        html = requests.get(url=url, headers=headers).text
+        html = requests.get(url=url, headers=self.headers).text
         return html
 
     def url_in(self):
@@ -92,34 +97,61 @@ class MzbSpider:
                 two_url = self.two_q.get(block=True, timeout=2)
                 # 生成指纹,来判断是否需要继续抓取此职位
                 finger = self.md5_url(url=two_url)
-                if self.r.sadd('tencent:spider', finger) == 1:
-                    two_html = self.get_html(url=two_url)
-                    two_xpath = '/html/body/div[2]/div[@class="left_main detail_main"]'
-                    # tr_list: [<element tr at xxx>, <element tr at xxx>, <element tr at xxx>, ...]
-                    tr_list = self.xpath_func(html=two_html, xpath_bds=two_xpath)
-                    item={}
-                    for div in tr_list:
-                        item['链接']=two_url
-                        item['title']=div.xpath('.//div[@class="cv-title"]/h2/text()')[0].strip()
-                        item['合作方式']=div.xpath('.//div/ul/li[2]/text()')[0].strip()
-                        item['预估日薪']=div.xpath('.//div/ul/li[2]/text()')[1].strip()
-                        item['预估总价']=div.xpath('.//div/ul/li[2]/text()')[2].strip()
-                        item['预估工时']=div.xpath('.//div/ul/li[2]/text()')[3].strip()
-                        item['所在区域']=div.xpath('.//div/ul/li[2]/text()')[4].strip()
-                        item['需求描述']=div.xpath('.//div[@class="mobmid"]/div/p/text()')[0].strip()
-                        item['状态']=div.xpath(".//div[@class='mainleft ']/div[@class='weui_panel_bd appoint_div margin_top_7']/a/text()")
+                # if self.r.sadd('tencent:spider', finger) == 1:
+                two_html = self.get_html(url=two_url)
+                two_xpath = '/html/body/div[2]/div[@class="left_main detail_main"]'
+                # tr_list: [<element tr at xxx>, <element tr at xxx>, <element tr at xxx>, ...]
+                tr_list = self.xpath_func(html=two_html, xpath_bds=two_xpath)
+                item={}
+                for div in tr_list:
+                    item['链接']=two_url
+                    item['title']=div.xpath('.//div[@class="cv-title"]/h2/text()')[0].strip()
+                    item['合作方式']=div.xpath('.//div/ul/li[2]/text()')[0].strip()
+                    item['预估日薪']=div.xpath('.//div/ul/li[2]/text()')[1].strip()
+                    item['预估总价']=div.xpath('.//div/ul/li[2]/text()')[2].strip()
+                    item['预估工时']=div.xpath('.//div/ul/li[2]/text()')[3].strip()
+                    item['所在区域']=div.xpath('.//div/ul/li[2]/text()')[4].strip()
+                    item['需求描述']=div.xpath('.//div[@class="mobmid"]/div/p/text()')[0].strip()
+                    item['状态']=div.xpath(".//div[@class='mainleft ']/div[@class='weui_panel_bd appoint_div margin_top_7']/a/text()")
+
+                    self.item_list.append(item)
                     print(item)
-                    # 加锁、释放锁
-                    self.lock2.acquire()
-                    self.count += 1
-                    self.lock2.release()
-                    time.sleep(0.2)
+
+
+
+
+
+
+
+                # 加锁、释放锁
+                self.lock2.acquire()
+                self.count += 1
+                self.lock2.release()
+                random.uniform(0,1)
+
             except Exception as e:
                 print(e)
                 break
 
+    def save_data(self,list_item):
+        lst_item = []
+        lst2_item = []
+        for i in range(len(list_item)):
+            lst = list(list_item[i])
+            lst2 = list(list_item[i].values())
+            lst_item.append(lst)
+            lst2_item.append(lst2)
+        import xlwt
+        work_book = xlwt.Workbook(encoding='utf-8')
+        sheet = work_book.add_sheet('爬虫表')
+        for i in range(len(lst_item[0])):
+            sheet.write(0, i, lst_item[0][i])
 
+        for i in range(len(lst2_item)):
+            for j in range(len(lst2_item[0])):
+                sheet.write(i + 1, j, lst2_item[i][j])
 
+        work_book.save('Excel爬虫最终测试.xls')
     def run(self):
         """程序入口函数"""
         self.url_in()
@@ -140,6 +172,8 @@ class MzbSpider:
 
         for t in t2_list:
             t.join()
+        self.save_data(self.item_list)
+
 
         print('job number:', self.count)
 
