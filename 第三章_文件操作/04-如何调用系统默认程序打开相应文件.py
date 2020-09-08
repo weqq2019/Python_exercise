@@ -5,9 +5,10 @@
 # 文件名称 : 04-如何调用系统默认程序打开相应文件.PY
 # 开发工具 : PyCharm
 import os
+
 while True:
     try:
-        path=input(r"请输入文件所在路径：")
+        path = input(r"请输入文件所在路径：")
         os.startfile(path)
     except:
         print("请输入正确的文件路径.......")
