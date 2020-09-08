@@ -141,3 +141,5 @@
             
 【5】执行 run.py 运行爬虫
 ```
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-05-05.png)
