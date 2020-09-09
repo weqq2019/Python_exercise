@@ -21,3 +21,15 @@
 06-如何对读取的文件内容进行分词
 
 ![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-06.png)
+
+07-对数据分析时判断只有选择Excel或者csv文件
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-07.png)
+
+08-如何像资源管理器一样显示指定文件下的所有子文件夹及文件
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-08.png)
+
+09-如何对运营数据文件进行分类整理
+
+![Image text](https://raw.githubusercontent.com/weqq2019/Python_exercise/master/img/03-09.png)
