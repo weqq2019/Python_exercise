@@ -7,6 +7,7 @@
 """
 猿急送爬虫单子数据
 """
+import os
 import random
 
 import requests
@@ -183,6 +184,11 @@ if __name__ == '__main__':
     spider.run()
     end_time = time.time()
     print('time:%.2f' % (end_time-start_time))
+    try:
+        path = "Excel爬虫最终测试.xls"
+        os.startfile(path)
+    except:
+        print("请输入正确的文件路径.......")
 
 
 
